@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+<!-- Post -->
+
+{% for post in post %}
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">{{post.title}}</h1>
+    <p>  {{post.categories}} </p>
+
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-9">
+
+      <div class="post-autor">
+
+        <p><i class="fas fa-pencil-alt"></i> Escrito por:  {{post.created_by}}</p>
+      </div>
+
+      <div class="post-date">
+        <p><i class="far fa-clock" id="date"></i>  {{post.updated}}</p>
+      </div>
+
+
+      <div class="post-text">
+      {% autoescape off %}
+        {{post.body}}
+      {% endautoescape %}
+
+      </div>
+
+    </div><!-- col -->
+  </div><!-- row -->
+</div><!-- container -->
+{% endfor %}
+
+{% endblock %}

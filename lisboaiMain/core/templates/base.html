@@ -1,0 +1,92 @@
+{% load staticfiles %}
+
+<html lang="en">
+
+  <head>
+		<meta charset="utf-8">
+    <title> Lisboaí | Imigração, trabalho e vida em Portugal</title>
+    <link rel="shortcut icon" href="img/favicon.ico" />
+    <!-- Bootstrap core CSS -->
+	 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+	 <link href="https://fonts.googleapis.com/css?family=Open+Sans|Open+Sans+Condensed:300|Roboto+Condensed|Source+Sans+Pro|Staatliches" rel="stylesheet">
+	 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+	 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	 <link href="{% static "css/lisboai.css" %}" rel="stylesheet">
+   
+  </head>
+
+  <body>
+<!-- Navbar -->
+    <header> 
+ 	    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+            <a class="navbar-brand" href="/"><img src="{% static "img/logo-preta.png" %}" width="80" height="90"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ml-lg-auto">
+                <li class="nav-item">
+                 	<a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                 	<a class="nav-link" href="{% url 'aboutUs' %}">Sobre nós</a>
+                </li>
+
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Vida em Portugal
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    {% for category in category %}
+                    <a class="dropdown-item" href="{% url 'pageArticle' category.id %}">{{category.name}}</a>
+                    {% endfor %}
+                  </div>
+                </li>
+
+                <li class="nav-item">
+                 	<a class="nav-link" href="viagens.html">Viagens</a>
+                </li>
+                <li class="nav-item">
+                 	<a class="nav-link" href="{% url 'contact' %}">Contato</a>
+                </li>
+                <li class="search">
+                	<form>
+                		<button type="submit" class="search-btn"><i class="fas fa-search"></i></button>
+                	</form>                 	
+                </li> 
+              </ul>           
+            </div>
+        </nav>
+    </header>
+
+
+            {% block content %}
+            {% endblock %}
+
+    <footer>
+    <div class="row">
+    <div class="col-md-12">
+    <p>Siga o lisboaí</p>
+    </div>
+    </div>
+        <div class="row">
+        <div class="col-md-12">
+        <ul class="social-icons">
+        {% for social in social %}
+        <li><a href="{{social.link}}" target="_blank"><i class="{{social.icon}}"></i></a></li>
+         {% endfor %}
+                </ul>
+            </div>
+    </div>     
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+
+    </body>
+
+    </html>

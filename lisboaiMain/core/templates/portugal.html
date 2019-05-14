@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load static %}
+
+<section id="portugal">
+  <div class="container">
+    <p> Nossa vida em terras lusitanas</p> 
+  </div>
+</section>
+
+ <!-- Cards -->
+
+ 
+ <div class="container">
+	<div class="row-index">	
+        <div class="card-deck">
+          {% for article in articles %}
+        	<div class="col-md-12">
+	        	<div class="card mb-3" style="max-width: 800px;">
+			  		<div class="row no-gutters">
+					    <div class="col-md-4">
+					      <a href="{% url 'post' article.slug %}"><img src="{{article.image}}" class="card-img" alt="..."></a>
+					    </div>
+					    <div class="col-md-8">
+							<div class="card-body">
+						        <h5 class="card-title"><a href="{% url 'post' article.slug %}">{{article.title}}</a></h5>
+						        <p class="card-date"><small class="text-muted">{{article.updated}}</small></p>
+						        <p class="card-text">{{article.short_description}}</p>
+						        <a href="{% url 'post' article.slug %}" class="btn">leia mais</a>	  
+						    </div>
+			    		</div>
+			  		</div>
+				</div>
+			</div>
+      {% endfor %}
+
+      </div> <!-- card deck -->
+  </div> <!-- row -->
+</div> 
+
+ 
+
+</div><!-- container -->
+
+{% endblock %}
