@@ -7,29 +7,32 @@
  {% load tz %}
 
 <div class="container" id="banner">
-	<div class="row">
-			<div class="col-md-6">
-					<div class="wheater">
+	
+					<!--<div class="wheater">
 						<h5> {% timezone "Europe/Lisbon" %}
                  Paris time: {{ value }}
                   {% endtimezone %} </h5>
 						<h4>Lisboa, Portugal</h4>
-					</div>
-			</div>
+					</div>-->
+			
 
 
 
-
+		<div class="row">
 		{% for article in articles %}
-    {% if article.spotlight %}	
+		{% if article.spotlight %}
+				
 		<div class="col-md-6">
 			<div class="capa">
 				<img src="{{article.image}}">
 				<a href="{% url 'post' article.slug %}"><span>{{article.title}}</span></a>
 			</div>
 		</div>
+		
+
 		{% endif %}
-	  {% endfor %}
+		{% endfor %}
+	</div>
 	</div>
 	  
 
@@ -39,7 +42,7 @@
 
 
  {% for article in articles %}
- {% if article.state == "p" %}	
+ {% if article.state == "p" and article.spotlight == False %}	
  <div class="container">
 	<div class="row-index">	
         <div class="card-deck">

@@ -85,6 +85,28 @@ body {
   color: #d5b59c;
 }
 
+.navbar-expand-lg .navbar-nav .dropdown-menu{
+  border: none;
+  padding: 0;
+}
+
+.dropdown-item{
+  text-transform: uppercase;
+  font-family: 'Century Gothic', sans-serif;
+  font-weight: bold;
+  letter-spacing: 0.2em;
+  font-size: 0.7em;
+  color: #000000;
+  text-align: center;
+  padding: 1em;
+}
+
+.dropdown-item:hover{
+  color: #d5b59c;
+  background: #FFFFFF;
+}
+
+
 /* ----------------------------- Banner ------------------------------------*/
 #banner {
   max-width: 80%;
