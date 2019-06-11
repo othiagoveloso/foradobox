@@ -29,6 +29,9 @@ urlpatterns = [
     path('<str:slug>', views.post, name='post'),
     path('about/', views.aboutUs, name='aboutUs'),
     path('contact/', views.contact, name='contact'),
+    path('send-email/', views.email, name='email'),
+
+
 
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
