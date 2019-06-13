@@ -26,7 +26,7 @@ class Article(models.Model):
     slug = models.SlugField(unique=True)
     title = models.CharField(max_length=100)
     short_description = models.CharField(max_length=100)
-    body = models.TextField(max_length=500,blank=True)
+    body = models.TextField(blank=True)
     image = models.URLField(max_length=200)
     created_by = models.ForeignKey(User, on_delete=models.CASCADE)
     updated = models.DateTimeField(auto_now=True)

@@ -172,8 +172,6 @@ body {
   padding: 20px 20px;
 }
 
-
-
 .card-deck {
   position: relative;
   -webkit-animation: mymove 3s;
@@ -238,7 +236,6 @@ body {
 .card-text {
   font-size: .8rem;
   font-family: 'Century Gothic', sans-serif;
-  text-align: center;
 }
 
 .card-body .btn {
@@ -346,9 +343,6 @@ footer .social-icons a:hover {
   letter-spacing: 0.2em;
   font-size: 2.2em;
   color: black;
-  text-align: center;
-
-
 }
 
 .post-autor {
@@ -450,4 +444,3 @@ footer .social-icons a:hover {
   background: #d5b59c;
 }
 /*# sourceMappingURL=lisboai.css.map */
-
