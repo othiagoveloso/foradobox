@@ -11,7 +11,7 @@
 	 <link href="https://fonts.googleapis.com/css?family=Open+Sans|Open+Sans+Condensed:300|Roboto+Condensed|Source+Sans+Pro|Staatliches" rel="stylesheet">
 	 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 	 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	 <link href="{% static "css/lisboai.css" %}" rel="stylesheet">
+	 <link href="{% static 'css/lisboai.css' %}" rel="stylesheet">
    
   </head>
 
@@ -19,7 +19,7 @@
 <!-- Navbar -->
     <header> 
  	    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
-            <a class="navbar-brand" href="/"><img src="{% static "img/logo-preta.png" %}" width="80" height="90"></a>
+            <a class="navbar-brand" href="/"><img src="{% static 'img/logo-preta.png' %}" width="80" height="90"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -44,9 +44,6 @@
                   </div>
                 </li>
 
-                <li class="nav-item">
-                 	<a class="nav-link" href="viagens.html">Viagens</a>
-                </li>
                 <li class="nav-item">
                  	<a class="nav-link" href="{% url 'contact' %}">Contato</a>
                 </li>

@@ -10,22 +10,25 @@
 	
 
 
-		{% for article in articles %}
-    {% if article.spotlight %}	
 		<div class="row">
+	{% for article in articles %}
+    {% if article.spotlight %}	
 		<div class="col-md-6">
 			<div class="capa">
 				<img src="{{article.image}}">
 				<a href="{% url 'post' article.slug %}"><span>{{article.title}}</span></a>
 			</div>
 		</div>
-		</div>
+		
 		{% endif %}
-	  {% endfor %}
+		{% endfor %}
+		
 	</div>
-	  
+	 
 
 </div>
+
+
 
  <!-- Cards -->
 
