@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 
 import os
 from unipath import Path
+import django_heroku
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = Path(__file__).parent
@@ -26,7 +28,7 @@ SECRET_KEY = 'lh5-+cyr3bm%zc#_9hi#$!)(i8=&%evv+e!wwohnq)dfh%vnmo'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["herokuapp.com",]
 
 
 # Application definition
@@ -141,3 +143,6 @@ EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 EMAIL_HOST_USER = "your_account@gmail.com"
 EMAIL_HOST_PASSWORD = "your account’s password"
+
+
+django_heroku.settings(locals())

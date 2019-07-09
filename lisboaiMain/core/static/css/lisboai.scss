@@ -82,6 +82,27 @@ body{
     }
 }
 
+.navbar-expand-lg .navbar-nav .dropdown-menu{
+    border: none;
+    padding: 0;
+  }
+  
+  .dropdown-item{
+    text-transform: uppercase;
+    font-family: 'Century Gothic', sans-serif;
+    font-weight: bold;
+    letter-spacing: 0.2em;
+    font-size: 0.7em;
+    color: #000000;
+    text-align: center;
+    padding: 1em;
+  }
+  
+  .dropdown-item:hover{
+    color: #d5b59c;
+    background: #FFFFFF;
+  }
+
 /* ----------------------------- Banner ------------------------------------*/
 #banner{
     max-width: 80%;
@@ -90,6 +111,7 @@ body{
     padding: 150px 0px 0px 0px; 
     img{
         width: 100%;
+        height: 60vh;
         max-height: 60vh;
         margin-bottom: 120px;
         filter: grayscale(50);
@@ -212,6 +234,11 @@ body{
     }
 }
 
+.card-body .btn:hover {
+    color: #d5b59c;
+  }
+
+
 /* --------------------------------- Footer -----------------------------------*/
 footer{
     @include fontType(0.8em, #000000);
@@ -276,7 +303,7 @@ footer .social-icons{
 
 .jumbotron-fluid{
 	padding-top: 200px;
-	color: #424242;
+    color: #424242;
 	background: $colorBlue;
 }
 
@@ -285,9 +312,11 @@ footer .social-icons{
 }
 
 .post-autor{
-	font-size: .8rem;
-	font-style: italic;
-	color: #424242;
+    text-transform: uppercase;
+	font-family: 'Century Gothic', sans-serif;
+    font-weight: bold;
+    font-size:0.7em;
+    color: #424242;
 }
 
 .post-date{

@@ -85,12 +85,12 @@ body {
   color: #d5b59c;
 }
 
-.navbar-expand-lg .navbar-nav .dropdown-menu{
+.navbar-expand-lg .navbar-nav .dropdown-menu {
   border: none;
   padding: 0;
 }
 
-.dropdown-item{
+.dropdown-item {
   text-transform: uppercase;
   font-family: 'Century Gothic', sans-serif;
   font-weight: bold;
@@ -101,11 +101,10 @@ body {
   padding: 1em;
 }
 
-.dropdown-item:hover{
+.dropdown-item:hover {
   color: #d5b59c;
   background: #FFFFFF;
 }
-
 
 /* ----------------------------- Banner ------------------------------------*/
 #banner {
@@ -117,6 +116,7 @@ body {
 
 #banner img {
   width: 100%;
+  height: 60vh;
   max-height: 60vh;
   height: 60vh;
   margin-bottom: 120px;
@@ -195,8 +195,6 @@ body {
   padding: 20px 20px;
 }
 
-
-
 .card-deck {
   position: relative;
   -webkit-animation: mymove 3s;
@@ -261,7 +259,6 @@ body {
 .card-text {
   font-size: .8rem;
   font-family: 'Century Gothic', sans-serif;
-  text-align: center;
 }
 
 .card-body .btn {
@@ -271,6 +268,10 @@ body {
   font-size: .6em;
   font-weight: bold;
   letter-spacing: 0.2em;
+}
+
+.card-body .btn:hover {
+  color: #d5b59c;
 }
 
 .card-body .btn:hover {
@@ -369,14 +370,13 @@ footer .social-icons a:hover {
   letter-spacing: 0.2em;
   font-size: 2.2em;
   color: black;
-  text-align: center;
-
-
 }
 
 .post-autor {
-  font-size: .8rem;
-  font-style: italic;
+  text-transform: uppercase;
+  font-family: 'Century Gothic', sans-serif;
+  font-weight: bold;
+  font-size: 0.7em;
   color: #424242;
 }
 
@@ -473,4 +473,3 @@ footer .social-icons a:hover {
   background: #d5b59c;
 }
 /*# sourceMappingURL=lisboai.css.map */
-
