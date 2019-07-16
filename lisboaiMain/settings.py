@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_summernote',
     'lisboaiMain.core',
+    'lisboaiMain.aboutMe',
 
 
 ]
@@ -145,4 +146,15 @@ EMAIL_HOST_USER = "your_account@gmail.com"
 EMAIL_HOST_PASSWORD = "your account’s password"
 
 
+REST_FRAMEWORK = {
+    # Use Django's standard `django.contrib.auth` permissions,
+    # or allow read-only access for unauthenticated users.
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ]
+}
+
+
 django_heroku.settings(locals())
+
+

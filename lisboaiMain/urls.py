@@ -16,8 +16,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from lisboaiMain.core import views
+from lisboaiMain.aboutMe.views import ProfileViewSet
 from django.conf.urls.static import static
 from django.conf import settings
+from rest_framework import routers
+
+
+router = routers.DefaultRouter()
+router.register(r'profiles', ProfileViewSet)
 
 
 
@@ -26,10 +32,11 @@ urlpatterns = [
     path('summernote/', include('django_summernote.urls')),  
     path('', views.index, name='index'),
     path('categoria/<int:id>', views.pageArticle, name='pageArticle'),
-    path('<str:slug>', views.post, name='post'),
+    path('article/<str:slug>', views.post, name='post'),
     path('about/', views.aboutUs, name='aboutUs'),
     path('contact/', views.contact, name='contact'),
-    path('send-email/', views.email, name='email'),
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    path('', include(router.urls)),
 
 
 
