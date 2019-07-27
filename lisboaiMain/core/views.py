@@ -23,8 +23,11 @@ def post(request,slug):
 
 
 def pageArticle(request,id):
-
-    objArticle = Article.objects.filter(id=id)
+    
+    #name_title=name.title()
+   
+    objArticle = Article.objects.all().filter(categories_id=id)
+    
         
     return render(request,"portugal.html",{"articles":objArticle})
 

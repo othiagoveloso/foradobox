@@ -145,6 +145,8 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = "your_account@gmail.com"
 EMAIL_HOST_PASSWORD = "your account’s password"
 
+DATETIME_INPUT_FORMATS = ['%d/%m/%Y %H:%M']
+
 
 REST_FRAMEWORK = {
     # Use Django's standard `django.contrib.auth` permissions,
