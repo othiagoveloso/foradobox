@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from lisboaiMain.core import views
-from lisboaiMain.aboutMe.views import ProfileViewSet
+from lisboaiMain.aboutMe.views import ProfileViewSet,ExperienceViewSet
 from django.conf.urls.static import static
 from django.conf import settings
 from rest_framework import routers
@@ -24,6 +24,7 @@ from rest_framework import routers
 
 router = routers.DefaultRouter()
 router.register(r'profiles', ProfileViewSet)
+router.register(r'experiences', ExperienceViewSet)
 
 
 
