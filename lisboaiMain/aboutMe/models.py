@@ -24,10 +24,10 @@ class Experience(models.Model):
     class Meta:
         unique_together = ['user']
 
-    
-    def __str__(self):
-        
-        return '{} {} {} {} {}'.format(self.title, self.company, self.logo, self.date, self.description) 
+    def __unicode__(self):
+        return '%d: %s' % (self.title)    
+
+s
 
 class Social(models.Model):
 
