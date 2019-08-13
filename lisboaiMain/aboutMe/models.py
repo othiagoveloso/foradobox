@@ -21,8 +21,7 @@ class Experience(models.Model):
     date = models.CharField(max_length=50)
     description = models.TextField(blank=True)
     
-    class Meta:
-        unique_together = ['user']
+    
 
     def __unicode__(self):
         return '%d: %s' % (self.title)    
