@@ -27,7 +27,6 @@ class Experience(models.Model):
     def __unicode__(self):
         return '%d: %s' % (self.title)    
 
-s
 
 class Social(models.Model):
 
