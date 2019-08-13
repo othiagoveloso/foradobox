@@ -26,7 +26,7 @@ class Experience(models.Model):
    
 
     def __str__(self, title, company, logo, date, description):
-        self.title = name
+        self.title = title
         self.company = company
         self.logo = logo 
         self.date = date 
