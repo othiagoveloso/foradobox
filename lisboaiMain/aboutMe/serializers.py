@@ -8,7 +8,7 @@ class ExperienceSerializer(serializers.ModelSerializer):
 
 # Serializers define the API representation.
 class ProfileSerializer(serializers.ModelSerializer):
-    experiences = serializers.StringRelatedField(many=True)
+    experiences = ExperienceSerializer(many=True, read_only=True)
     class Meta:
         model = Profile
         fields = ['name', 'short_description', 'description', 'image', 'updated','experiences']
