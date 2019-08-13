@@ -14,6 +14,8 @@ class Profile(models.Model):
     def __str__(self):
         return self.name
     
+    def __unicode__(self):
+        return (self.name)
 
 
 class Experience(models.Model):
@@ -24,9 +26,11 @@ class Experience(models.Model):
     logo = models.URLField(max_length=200)
     date = models.CharField(max_length=50)
     description = models.TextField(blank=True)
+    position = models.PositiveSmallIntegerField ("Position", blank=True,null=True)
     
     class Meta:
-        unique_together = ['user']
+        ordering = ['position']
+    
 
     def __unicode__(self):
         return (self.title)    
