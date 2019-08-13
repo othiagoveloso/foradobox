@@ -26,7 +26,7 @@ class Experience(models.Model):
 
 
     def __str__(self):
-        return (self.title, self.company, self.logo, self.date, self.description) 
+        return '%s %s %s %s %s'%(self.title, self.company, self.logo, self.date, self.description) 
 
 class Social(models.Model):
 
