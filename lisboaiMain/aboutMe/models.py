@@ -30,8 +30,11 @@ class Experience(models.Model):
         self.logo = logo 
         self.date = date 
         self.description = description   
+  
 
-       
+    def __str__(self):
+        
+        return '{} {} {} {} {}'.format(self.title, self.company, self.logo, self.date, self.description) 
 
 class Social(models.Model):
 
