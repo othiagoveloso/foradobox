@@ -14,7 +14,7 @@ class Profile(models.Model):
 
 class Experience(models.Model):
     
-    user = models.ForeignKey('Profile',on_delete=False)
+    user = models.ForeignKey('Profile',related_name='experiences', on_delete=models.CASCADE)
     title = models.CharField(max_length=100)
     company = models.CharField(max_length=50)
     logo = models.URLField(max_length=200)
