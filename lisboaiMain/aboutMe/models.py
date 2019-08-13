@@ -23,15 +23,15 @@ class Experience(models.Model):
     
     class Meta:
         unique_together = ['user']
-   
 
-    def __str__(self, title, company, logo, date, description):
-        self.title = title
+    def __init__(self, title, company, logo, date, description):
+        self.title = name
         self.company = company
         self.logo = logo 
         self.date = date 
-        self.description = description
-        return (self.title, self.company, self.logo, self.date, self.description) 
+        self.description = description   
+
+       
 
 class Social(models.Model):
 
