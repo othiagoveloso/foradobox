@@ -10,25 +10,20 @@ class Profile(models.Model):
     description = models.TextField(blank=True)
     image = models.URLField(max_length=200)
     updated = models.DateTimeField(auto_now=True)
-    
-    
-    def __unicode__(self): 
-        return (self.name)
 
-    def __str__(self):
-        return self.name 
 
 class Experience(models.Model):
-
+    
     user = models.ForeignKey('Profile',on_delete=False)
     title = models.CharField(max_length=100)
     company = models.CharField(max_length=50)
     logo = models.URLField(max_length=200)
     date = models.CharField(max_length=50)
     description = models.TextField(blank=True)
+    
+    class Meta:
+        unique_together = ['user']
 
-    def __unicode__(self): 
-        return (self.title)
 
     def __str__(self):
         return self.title 
