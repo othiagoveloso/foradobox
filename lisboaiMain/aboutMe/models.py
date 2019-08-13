@@ -11,6 +11,9 @@ class Profile(models.Model):
     image = models.URLField(max_length=200)
     updated = models.DateTimeField(auto_now=True)
 
+    def __unicode__(self):
+        return (self.name)  
+
 
 class Experience(models.Model):
     
