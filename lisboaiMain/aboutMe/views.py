@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from rest_framework import viewsets
 from .models import Profile,Experience
-from .serializers import ProfileSerializer
+from .serializers import ProfileSerializer,ExperienceSerializer
 
 
 # Create your views here.
@@ -10,3 +10,7 @@ from .serializers import ProfileSerializer
 class ProfileViewSet(viewsets.ModelViewSet):
     queryset = Profile.objects.all()
     serializer_class = ProfileSerializer
+
+class ExperienceViewSet(viewsets.ModelViewSet):
+    queryset = Experience.objects.all()
+    serializer_class = ExperienceSerializer    
