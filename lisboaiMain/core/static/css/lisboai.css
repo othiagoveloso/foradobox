@@ -2,6 +2,7 @@
 body {
   width: 100%;
   height: 100%;
+  font-family: 'Oswald', sans-serif;
 }
 
 .navbar {
@@ -22,13 +23,13 @@ body {
   font-weight: bold;
   letter-spacing: 0.2em;
   font-size: 0.7em;
-  color: #000000;
+  color: #000;
   display: block;
   padding: 14px 20px;
 }
 
 .navbar-light .navbar-nav .nav-item .nav-link:hover {
-  color: #d5b59c;
+  color: #8a6ca0;
 }
 
 .navbar.scrolled {
@@ -52,7 +53,7 @@ body {
   width: 150px;
   margin-left: 20px;
   border: none;
-  border-bottom: 1px solid #d5b59c;
+  border-bottom: 1px solid #8a6ca0;
   opacity: 0.3;
   -webkit-transition: width .35s ease-in-out;
   transition: width .35s ease-in-out;
@@ -60,14 +61,14 @@ body {
 
 .search-txt:hover {
   border: none;
-  border-bottom: 2px solid #d5b59c;
+  border-bottom: 2px solid #8a6ca0;
   -webkit-transition: 0.2s all;
   transition: 0.2s all;
 }
 
 .search-txt:focus {
   outline: none;
-  border: 2px solid #d5b59c;
+  border: 2px solid #8a6ca0;
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
@@ -82,28 +83,7 @@ body {
 }
 
 .search-btn:hover {
-  color: #d5b59c;
-}
-
-.navbar-expand-lg .navbar-nav .dropdown-menu {
-  border: none;
-  padding: 0;
-}
-
-.dropdown-item {
-  text-transform: uppercase;
-  font-family: 'Century Gothic', sans-serif;
-  font-weight: bold;
-  letter-spacing: 0.2em;
-  font-size: 0.7em;
-  color: #000000;
-  text-align: center;
-  padding: 1em;
-}
-
-.dropdown-item:hover {
-  color: #d5b59c;
-  background: #FFFFFF;
+  color: #8a6ca0;
 }
 
 /* ----------------------------- Banner ------------------------------------*/
@@ -118,7 +98,6 @@ body {
   width: 100%;
   height: 60vh;
   max-height: 60vh;
-  height: 60vh;
   margin-bottom: 120px;
   -webkit-filter: grayscale(50);
           filter: grayscale(50);
@@ -132,7 +111,7 @@ body {
   font-weight: bold;
   letter-spacing: 0.2em;
   font-size: 1.5em;
-  color: #3d3f3f;
+  color: #000;
   text-align: center;
   max-width: 300px;
   position: absolute;
@@ -142,7 +121,7 @@ body {
           transform: translate(-50%, -50%);
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  background: #A9F5D0;
+  background: #9400d3;
 }
 
 #banner a span:hover {
@@ -158,7 +137,7 @@ body {
   font-weight: bold;
   letter-spacing: 0.2em;
   font-size: 0.7em;
-  color: #000000;
+  color: #000;
   text-align: center;
   padding: 50px 0 10px 0;
 }
@@ -169,7 +148,7 @@ body {
   font-weight: bold;
   letter-spacing: 0.2em;
   font-size: 0.5em;
-  color: #000000;
+  color: #000;
   text-align: center;
 }
 
@@ -232,7 +211,7 @@ body {
   font-weight: bold;
   letter-spacing: 0.2em;
   font-size: 1em;
-  color: #000000;
+  color: #000;
   text-align: center;
   padding-top: 20px;
 }
@@ -258,20 +237,20 @@ body {
 
 .card-text {
   font-size: .8rem;
-  font-family: 'Century Gothic', sans-serif;
+  font-family: 'Oswald', sans-serif;
+}
+
+.card-body {
+  text-align: center;
 }
 
 .card-body .btn {
   color: black;
   text-transform: uppercase;
-  font-family: 'Century Gothic', sans-serif;
+  font-family: 'Oswald', sans-serif;
   font-size: .6em;
   font-weight: bold;
   letter-spacing: 0.2em;
-}
-
-.card-body .btn:hover {
-  color: #d5b59c;
 }
 
 .card-body .btn:hover {
@@ -285,7 +264,7 @@ footer {
   font-weight: bold;
   letter-spacing: 0.2em;
   font-size: 0.8em;
-  color: #000000;
+  color: #000;
   background: #FFFFFF;
   text-align: center;
   padding-top: 50px;
@@ -339,12 +318,12 @@ footer .social-icons a:hover {
   font-weight: bold;
   letter-spacing: 0.2em;
   font-size: 0.9em;
-  color: #000000;
+  color: #000;
   padding: 40px 0;
 }
 
 .about-text {
-  font-family: 'Century Gothic', sans-serif;
+  font-family: 'Oswald', sans-serif;
   font-size: 0.9em;
   text-align: justify;
 }
@@ -359,8 +338,8 @@ footer .social-icons a:hover {
 /* ------------------------------------- Post --------------------------------*/
 .jumbotron-fluid {
   padding-top: 200px;
-  color: #424242;
-  background: #A9F5D0;
+  color: #ffffff;
+  background: #9400d3;
 }
 
 .jumbotron-fluid h1 {
@@ -369,7 +348,7 @@ footer .social-icons a:hover {
   font-weight: bold;
   letter-spacing: 0.2em;
   font-size: 2.2em;
-  color: black;
+  color: #000;
 }
 
 .post-autor {
@@ -392,7 +371,7 @@ footer .social-icons a:hover {
   font-weight: bold;
   letter-spacing: 0.2em;
   font-size: 0.9em;
-  color: #d5b59c;
+  color: #000;
   padding: 200px 0 100px 0;
 }
 
@@ -403,7 +382,7 @@ footer .social-icons a:hover {
   font-weight: bold;
   letter-spacing: 0.2em;
   font-size: 0.9em;
-  color: #d5b59c;
+  color: #000;
   padding: 200px 0 100px 0;
 }
 
@@ -414,7 +393,7 @@ footer .social-icons a:hover {
   font-weight: bold;
   letter-spacing: 0.2em;
   font-size: 0.9em;
-  color: #d5b59c;
+  color: #000;
   padding: 200px 0 100px 80px;
 }
 
@@ -431,7 +410,7 @@ footer .social-icons a:hover {
   font-weight: bold;
   letter-spacing: 0.2em;
   font-size: 0.7em;
-  color: #000000;
+  color: #000;
   margin: 0 auto;
   max-width: 50%;
   height: auto;
@@ -451,7 +430,7 @@ footer .social-icons a:hover {
   font-weight: bold;
   letter-spacing: 0.2em;
   font-size: 1.2em;
-  color: #000000;
+  color: #000;
   width: 100%;
   background: #FFFFFF;
   text-align: center;
@@ -459,7 +438,7 @@ footer .social-icons a:hover {
 }
 
 .contact-form button:hover {
-  background: #A9F5D0;
+  background: #9400d3;
 }
 
 .txtb input, .txtb textarea {
@@ -470,9 +449,6 @@ footer .social-icons a:hover {
   margin-top: 20px;
   padding: 5px;
   margin: 10px 0;
-  background: #d5b59c;
+  background: #8a6ca0;
 }
 /*# sourceMappingURL=lisboai.css.map */
-
-
-  

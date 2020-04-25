@@ -9,7 +9,7 @@ from django.conf import settings
 
 def index(request,template_name="index.html"): 
 
-    objArticle = Article.objects.all()
+    objArticle = Article.objects.filter(state='p').order_by('-updated')
     
     return render(request,template_name,{'articles':objArticle})
 
@@ -24,12 +24,9 @@ def post(request,slug):
 
 def pageArticle(request,id):
     
-    #name_title=name.title()
-   
     objArticle = Article.objects.all().filter(categories_id=id)
-    
         
-    return render(request,"portugal.html",{"articles":objArticle})
+    return render(request,"artigos.html",{"articles":objArticle})
 
     
 def aboutUs(request,template_name="about.html"):

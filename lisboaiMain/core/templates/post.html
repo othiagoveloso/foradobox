@@ -9,9 +9,12 @@
 {% for post in post %}
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
+    <a href="{% url 'pageArticle' post.categories.id %}"><h6> #{{post.categories}}</h6> </a>
     <h1 class="display-4">{{post.title}}</h1>
-   <h5> <i class="fas fa-tag"></i> {{post.categories| upper}}</h5>
-
+    <hr/>
+    <h5>{{post.short_description}}</h5>
+   
+   {{category.name}}
 
   </div>
 </div>
@@ -21,12 +24,15 @@
     <div class="col-md-9">
 
       <div class="post-autor">
-        <p>  Por:  {{post.created_by}}</p>
+        <p>  Criado por:  {{post.created_by}}
+          
+            Em: {{post.updated|date:'d-m-Y H:i'}}
+          
+        </p>
+        
       </div>
 
-      <div class="post-date">
-        <p>{{post.updated|date:'d-m-Y H:i'}}</p>
-      </div>
+      
 
 
       <div class="post-text">

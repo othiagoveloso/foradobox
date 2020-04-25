@@ -34,11 +34,14 @@ class Article(models.Model):
     spotlight = models.BooleanField(default=False)
 
 
-    def __unicode__(self): 
-        return (self.title)
-
     def __str__(self):
         return self.title 
+
+    def body_preview(self):
+        return self.body[:50]    
+
+    def __unicode__(self): 
+        return (self.title)    
 
              
 

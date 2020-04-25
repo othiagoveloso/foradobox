@@ -1,6 +1,6 @@
 
-$colorRose: #d5b59c;
-$colorBlue: #A9F5D0;
+$colorPurple: #8a6ca0;
+$colorViolet: #9400d3; 
 
 @mixin fontType($font-size, $color){
     text-transform: uppercase;
@@ -8,13 +8,16 @@ $colorBlue: #A9F5D0;
 	font-weight: bold;
     letter-spacing: 0.2em;
     font-size: $font-size;
-    color: $color;
+    color: #000;
 }
+
+
 
 /* ------------------------------- Navbar -------------------------------*/
 body{
 	width: 100%;
-	height: 100%;
+    height: 100%;
+    font-family: 'Oswald', sans-serif;
 }
 
 .navbar {
@@ -32,7 +35,7 @@ body{
 	display: block;
     padding: 14px 20px;
     &:hover{
-        color: $colorRose;
+        color: $colorPurple;
     }
 }
 
@@ -54,18 +57,18 @@ body{
     width: 150px;
     margin-left: 20px;
     border: none;
-    border-bottom: 1px solid $colorRose;
+    border-bottom: 1px solid $colorPurple;
     opacity: 0.3;
     -webkit-transition: width .35s ease-in-out;
     transition: width .35s ease-in-out;
     &:hover{
         border: none;
-        border-bottom: 2px solid $colorRose;
+        border-bottom: 2px solid $colorPurple;
         transition: 0.2s all;
     }
     &:focus{
         outline: none;
-        border: 2px solid $colorRose;
+        border: 2px solid $colorPurple;
         transition: 0.3s;
     }
 }
@@ -78,30 +81,10 @@ body{
 	background: transparent;
     cursor: pointer;
     &:hover{
-        color: $colorRose;
+        color: $colorPurple;
     }
 }
 
-.navbar-expand-lg .navbar-nav .dropdown-menu{
-    border: none;
-    padding: 0;
-  }
-  
-  .dropdown-item{
-    text-transform: uppercase;
-    font-family: 'Century Gothic', sans-serif;
-    font-weight: bold;
-    letter-spacing: 0.2em;
-    font-size: 0.7em;
-    color: #000000;
-    text-align: center;
-    padding: 1em;
-  }
-  
-  .dropdown-item:hover{
-    color: #d5b59c;
-    background: #FFFFFF;
-  }
 
 /* ----------------------------- Banner ------------------------------------*/
 #banner{
@@ -121,7 +104,7 @@ body{
     }
 
     a span{
-        @include fontType(1.5em, #3d3f3f);
+        @include fontType(1.5em, #000);
         text-align: center;
         max-width: 300px;
         position: absolute;
@@ -129,7 +112,7 @@ body{
         left: 50%;
         transform: translate(-50%,-50%);
         box-sizing: border-box;
-        background: $colorBlue;
+        background: $colorViolet;
             &:hover{
                 color: #3d3f3f;
                 transition: 0.3s;
@@ -219,13 +202,17 @@ body{
 }
 .card-text{
 	font-size: .8rem;
-	font-family:'Century Gothic', sans-serif;	
+    font-family: 'Oswald', sans-serif;
 }
+
+.card-body{
+    text-align: center;
+  }
 
 .card-body .btn{
 	color: black;
 	text-transform: uppercase;
-	font-family:'Century Gothic', sans-serif;
+	font-family: 'Oswald', sans-serif;
 	font-size: .6em;
 	font-weight: bold;
 	letter-spacing: 0.2em;
@@ -234,9 +221,6 @@ body{
     }
 }
 
-.card-body .btn:hover {
-    color: #d5b59c;
-  }
 
 
 /* --------------------------------- Footer -----------------------------------*/
@@ -288,7 +272,7 @@ footer .social-icons{
 }
 
 .about-text{
-	font-family:'Century Gothic', sans-serif;
+	font-family: 'Oswald', sans-serif;
 	font-size: 0.9em;
     text-align: justify;
 }
@@ -303,12 +287,12 @@ footer .social-icons{
 
 .jumbotron-fluid{
 	padding-top: 200px;
-    color: #424242;
-	background: $colorBlue;
+    color: #ffffff;
+  background: #9400d3;
 }
 
 .jumbotron-fluid h1{
-	@include fontType(2.2em, black);
+	@include fontType(2.2em, rgb(206, 205, 205));
 }
 
 .post-autor{
@@ -327,19 +311,19 @@ footer .social-icons{
 /* ------------------------------------- Viagens --------------------------------*/
 
 #viagem{
-    @include fontType(0.9em, $colorRose);
+    @include fontType(0.9em, $colorPurple);
 	padding: 200px 0 100px 0;
 }
     
 /* ------------------------------------- Portugal --------------------------------*/
 #portugal{
-    @include fontType(0.9em, $colorRose);
+    @include fontType(0.9em, #9400d3);
 	padding: 200px 0 100px 0;
 }
 
 /* ------------------------------------- Busca --------------------------------*/
 #busca{
-    @include fontType(0.9em, $colorRose);
+    @include fontType(0.9em, $colorPurple);
     padding: 200px 0 100px 80px;
     input{
         width: 300px;
@@ -368,7 +352,7 @@ footer .social-icons{
         text-align: center;
         margin-bottom: 80px;
         &:hover{
-            background: $colorBlue;
+            background: $colorViolet;
         }
     }
 }
@@ -381,6 +365,6 @@ footer .social-icons{
 	margin-top:20px;
 	padding: 5px;
 	margin: 10px 0;
-	background: $colorRose;
+	background: $colorPurple;
 }
 
