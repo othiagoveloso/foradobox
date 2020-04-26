@@ -11,11 +11,20 @@ $colorViolet: #9400d3;
 }
 
 /* ------------------------------- Navbar -------------------------------*/
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: 0;
+}
+
 body{
 	width: 100%;
     height: auto;
     font-family: 'Century Gothic', sans-serif;
+    overflow-x: hidden;
 }
+
 
 .navbar {
 	transition: 0.5s all;
@@ -76,7 +85,6 @@ body{
     max-width: 80%;
     height: auto;
     margin: 0px auto;
-
     padding: 150px 0px 0px 0px;
     img{
         width: 100%;
@@ -120,7 +128,7 @@ body{
         a span{
             width: 100%;
             top: 20%;
-            left:15%;
+            left:9%;
         }
     }
 }
@@ -145,7 +153,7 @@ body{
 }
 
 .card{
-    border: 2px solid rgb(126, 125, 126);
+    border: 1px solid $colorPurple;
     padding: 30px;
 }
 
@@ -198,7 +206,7 @@ footer{
     @include fontType(0.8em);
     background: #FFFFFF;
     text-align: center;
-    padding-top: 50px;
+    margin-top: 50px;
 }
 
 footer .social-icons{
@@ -217,7 +225,7 @@ footer .social-icons{
 }
 
 #copyright {
-    color: #ca9efc;
+    color: #b0a2c1;
     margin-top: 30px;
     font-family: 'Oswald', sans-serif;
     text-align: center;
@@ -299,7 +307,7 @@ footer .social-icons{
 	color: #424242;
 }
     
-/* ------------------------------------- Portugal --------------------------------*/
+/* ------------------------------------- Article --------------------------------*/
 .article{
     @include fontType(0.9em);
     padding: 200px 0 100px 0;
@@ -309,37 +317,25 @@ footer .social-icons{
 
 /* ------------------------------------- Contato --------------------------------*/
 
-.contact-form{
+.contact{
     @include fontType(0.7em);
     margin: 0 auto;
     max-width: 50%;
     height: auto;
-    padding: 240px 0 0 0;
-    box-sizing: border-box;
+    margin-top: 240px;
+    margin-bottom: 100px;
+    padding: 40px;
     text-align: center;
-    p em{
+    p{
         letter-spacing: 0.1em;
+        margin-bottom: 30px;
     }
-    button{
-        @include fontType(1.2em);
-        width: 100%;
-        background: #FFFFFF;
-        text-align: center;
-        margin-bottom: 80px;
-        &:hover{
-            background: $colorViolet;
+    a{
+        color: $colorViolet;
+        &:hover {
+            color: $colorPurple;
+            text-decoration: none;
         }
     }
-}
-
-.txtb input, .txtb textarea{
-	width: 100%;
-	border: none;
-	outline: none;
-	font-size: 1.3em;
-	margin-top:20px;
-	padding: 5px;
-	margin: 10px 0;
-	background: $colorPurple;
 }
 
