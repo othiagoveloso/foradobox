@@ -14,6 +14,7 @@ admin.site.register(Categories, CategoriesAdmin)
 
 
 class ArticleAdmin(SummernoteModelAdmin):
+    
     fields = ('categories','title','slug','short_description','image' ,'body','state','created_by','spotlight','body_preview', )
     list_display = ('title','categories','state','updated','spotlight')
     prepopulated_fields = {'slug': ('title',)}
