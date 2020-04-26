@@ -4,22 +4,18 @@
 
 {% load static %}
 
-<section id="portugal">
-  <div class="container">
-	
+<div class="container article">
 	<h2>#{{articles.0.categories}}</h2>
 	<hr/> 
-	
-  </div>
-</section>
+</div>
 
  <!-- Cards -->
 
- 
- <div class="container">
-	<div class="row-index">	
-        <div class="card-deck">
-          {% for article in articles %}
+<div class="container">
+	<div class="row">	
+    <div class="card-deck">
+			{% for article in articles %}
+			
         	<div class="col-md-12">
 	        	<div class="card mb-3" style="max-width: auto">
 			  		<div class="row no-gutters">
