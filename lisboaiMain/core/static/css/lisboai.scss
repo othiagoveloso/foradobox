@@ -2,22 +2,19 @@
 $colorPurple: #8a6ca0;
 $colorViolet: #9400d3; 
 
-@mixin fontType($font-size, $color){
+@mixin fontType($font-size){
     text-transform: uppercase;
 	font-family: 'Century Gothic', sans-serif;
 	font-weight: bold;
     letter-spacing: 0.2em;
     font-size: $font-size;
-    color: #000;
 }
-
-
 
 /* ------------------------------- Navbar -------------------------------*/
 body{
 	width: 100%;
-    height: 100%;
-    font-family: 'Oswald', sans-serif;
+    height: auto;
+    font-family: 'Century Gothic', sans-serif;
 }
 
 .navbar {
@@ -31,9 +28,10 @@ body{
 }
 
 .navbar-light .navbar-nav .nav-item .nav-link{
-    @include fontType(0.7em, #000000);
+    @include fontType(0.7em);
+    color: #000000;
 	display: block;
-    padding: 14px 20px;
+    margin: 14px 10px;
     &:hover{
         color: $colorPurple;
     }
@@ -73,25 +71,13 @@ body{
     }
 }
 
-.search-btn{
-	color: #000000;
-	width: 40px;
-	height: 40px;
-	border: none;
-	background: transparent;
-    cursor: pointer;
-    &:hover{
-        color: $colorPurple;
-    }
-}
-
-
 /* ----------------------------- Banner ------------------------------------*/
 #banner{
     max-width: 80%;
     height: auto;
     margin: 0px auto;
-    padding: 150px 0px 0px 0px; 
+
+    padding: 150px 0px 0px 0px;
     img{
         width: 100%;
         height: 60vh;
@@ -100,36 +86,24 @@ body{
         filter: grayscale(50);
         position: relative;
         opacity: 0.7;
-        
     }
-
     a span{
-        @include fontType(1.5em, #000);
+        font-family: 'Oswald', sans-serif;
+        font-size: 1.8em;
+        text-transform: uppercase;
+        
+        color: #ffffff; 
         text-align: center;
         max-width: 300px;
         position: absolute;
-        top: 40%;
-        left: 50%;
-        transform: translate(-50%,-50%);
+        top: 25%;
+        left: 25%;
         box-sizing: border-box;
         background: $colorViolet;
             &:hover{
-                color: #3d3f3f;
-                transition: 0.3s;
-                font-size: 1.55em;
-                }
+                color: rgb(203, 202, 202);
+            }
     }
-}
-
-#banner h5{
-    @include fontType(0.7em, #000000);
-	text-align: center;
-	padding: 50px 0 10px 0;
-}
-
-#banner h4{
-    @include fontType(0.5em, #000000);
-	text-align: center;
 }
 
 @media (max-width: 768px){
@@ -145,15 +119,12 @@ body{
         }
         a span{
             width: 100%;
-            top: 38%;
+            top: 20%;
+            left:15%;
         }
     }
 }
 /* ------------------------------- Cards -----------------------------------*/
-
-.row-index .col-md-12{
-	padding: 20px 20px;
-}
 
 .card-deck{
 	position: relative;
@@ -174,19 +145,20 @@ body{
 }
 
 .card{
-	border:none;
-	padding: 30px;
+    border: 0.5px solid $colorViolet;
+    padding: 30px;
 }
 
 .card-title{
-    @include fontType(1.0em, #000000);
+    @include fontType(1.0em);
 	text-align: center;
-	padding-top: 20px;
+    margin-top: 30px;
+    margin-bottom: 30px;
     a{
-        color: #424242;
+        color: #000;
         text-decoration: none;
         &:hover{
-            color: #424242;
+            color: #878787;
             text-decoration: none;
         }
     }
@@ -201,8 +173,7 @@ body{
 	padding-bottom: 30px;
 }
 .card-text{
-	font-size: .8rem;
-    font-family: 'Oswald', sans-serif;
+	font-size: .9rem;
 }
 
 .card-body{
@@ -213,11 +184,10 @@ body{
 	color: black;
 	text-transform: uppercase;
 	font-family: 'Oswald', sans-serif;
-	font-size: .6em;
-	font-weight: bold;
+	font-size: .7em;
 	letter-spacing: 0.2em;
     &:hover{
-        color: #d5b59c;
+        color: $colorViolet;
     }
 }
 
@@ -225,7 +195,7 @@ body{
 
 /* --------------------------------- Footer -----------------------------------*/
 footer{
-    @include fontType(0.8em, #000000);
+    @include fontType(0.8em);
     background: #FFFFFF;
     text-align: center;
     padding-top: 50px;
@@ -244,6 +214,13 @@ footer .social-icons{
             font-size: 2.1em; 
             }
         }
+}
+
+#copyright {
+    color: #ca9efc;
+    margin-top: 30px;
+    font-family: 'Oswald', sans-serif;
+    text-align: center;
 }
 
 /* ------------------------------------- About --------------------------------*/
@@ -267,7 +244,7 @@ footer .social-icons{
 }
 
 .about-title{
-	@include fontType(0.9em, #000000);
+	@include fontType(0.9em);
 	padding: 40px 0;
 }
 
@@ -288,54 +265,50 @@ footer .social-icons{
 .jumbotron-fluid{
 	padding-top: 200px;
     color: #ffffff;
-  background: #9400d3;
+    background: #9400d3;
+    h1{
+    font-family: 'Oswald', sans-serif;
+    font-size: 2.1em;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    }
+    a {
+        color: #fff;
+        margin-bottom: 20px;
+        &:hover{
+            text-decoration: none;
+        } 
+    }
 }
 
-.jumbotron-fluid h1{
-	@include fontType(2.2em, rgb(206, 205, 205));
+.category-name{
+    @include fontType(0.7em);
 }
 
 .post-autor{
-    text-transform: uppercase;
 	font-family: 'Century Gothic', sans-serif;
-    font-weight: bold;
-    font-size:0.7em;
-    color: #424242;
+    font-size:0.8em;
+    color: $colorPurple;
+    margin-bottom: 50px;
 }
 
 .post-date{
 	font-size: .75rem;
 	color: #424242;
 }
-
-/* ------------------------------------- Viagens --------------------------------*/
-
-#viagem{
-    @include fontType(0.9em, $colorPurple);
-	padding: 200px 0 100px 0;
-}
     
 /* ------------------------------------- Portugal --------------------------------*/
-#portugal{
-    @include fontType(0.9em, #9400d3);
-	padding: 200px 0 100px 0;
-}
-
-/* ------------------------------------- Busca --------------------------------*/
-#busca{
-    @include fontType(0.9em, $colorPurple);
-    padding: 200px 0 100px 80px;
-    input{
-        width: 300px;
-        padding: 5px;
-        margin-bottom: 15px;
-    }
+.article{
+    @include fontType(0.9em);
+    padding: 200px 0 100px 0;
+    color: $colorPurple;
+    font-family: 'Oswald', sans-serif;
 }
 
 /* ------------------------------------- Contato --------------------------------*/
 
 .contact-form{
-    @include fontType(0.7em, #000000);
+    @include fontType(0.7em);
     margin: 0 auto;
     max-width: 50%;
     height: auto;
@@ -346,7 +319,7 @@ footer .social-icons{
         letter-spacing: 0.1em;
     }
     button{
-        @include fontType(1.2em, #000000);
+        @include fontType(1.2em);
         width: 100%;
         background: #FFFFFF;
         text-align: center;
