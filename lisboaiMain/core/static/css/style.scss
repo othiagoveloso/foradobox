@@ -234,32 +234,31 @@ footer .social-icons{
 /* ------------------------------------- About --------------------------------*/
 #about{
 	text-align: center;
-    padding: 150px 0 90px 0;
+    padding: 100px 0 90px 0;
     position: relative;
 }
 
 #about-img{
-	background: cover;
-	padding: 0px 0 70px 20px;
-	min-height: 30vh;
-    text-align: center;
+    min-height: 30vh;
+    max-width: 50%;
     position: relative;
     filter: sepia(60%);
 }
 
-.rounded-circle{
-	height: 13em;
-}
-
 .about-title{
 	@include fontType(0.9em);
-	padding: 40px 0;
+	margin: 50px 0 50px 0;
+}
+
+.about-name {
+    padding-bottom: 30px;
+    letter-spacing: 0.1em;
 }
 
 .about-text{
-	font-family: 'Oswald', sans-serif;
 	font-size: 0.9em;
     text-align: justify;
+    padding-bottom: 30px;
 }
 
 @media (max-width: 768px){
