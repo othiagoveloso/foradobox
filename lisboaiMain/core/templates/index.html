@@ -10,7 +10,7 @@
     {% if article.spotlight %}	
 		<div class="col-md-6">
 			<img src="{{article.image}}" alt="">
-			<a href="{% url 'post' article.slug %}"><span>{{article.title}}</span></a>
+			<h1><a href="{% url 'post' article.slug %}"><span>| {{article.title}}</span></a></h1>
 		</div>
 		
 		{% endif %}
@@ -31,7 +31,8 @@
 	        	<div class="card mb-3" style="max-width: auto;">
 			  		<div class="row no-gutters">
 						<div class="col-md-4">
-					      <a href="{% url 'post' article.slug %}"><img src="{{article.image}}" class="card-img" alt="..."></a>
+							<p class="card-categories"><span> {{article.categories}} </span></p>
+					    	<a href="{% url 'post' article.slug %}"><img src="{{article.image}}" class="card-img" alt="..."></a>
 						</div>
 							
 					    <div class="col-md-8">
@@ -39,7 +40,7 @@
 						      	<h5 class="card-title"><a href="{% url 'post' article.slug %}">{{article.title}}</a></h5>
 						      	<!--<p class="card-date"><small class="text-muted">{{article.updated}}</small></p>-->
 								<p class="card-text">{{article.short_description}}</p>
-						      	<a href="{% url 'post' article.slug %}" class="btn">leia mais</a>	  
+						      	<p class="card-btn"><a href="{% url 'post' article.slug %}">leia mais </a></p> 
 							</div>
 						</div>
 							

@@ -95,25 +95,24 @@ body {
   height: 60vh;
   max-height: 60vh;
   margin-bottom: 120px;
-  -webkit-filter: grayscale(50);
-          filter: grayscale(50);
   position: relative;
   opacity: 0.7;
 }
 
 #banner a span {
   font-family: 'Oswald', sans-serif;
-  font-size: 1.8em;
+  font-size: 0.8em;
   text-transform: uppercase;
+  text-align: inicial;
   color: #ffffff;
-  text-align: center;
+  background: rgba(0, 0, 0, 0.7);
   max-width: 300px;
   position: absolute;
-  top: 25%;
-  left: 25%;
+  top: 35%;
+  left: 15;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  background: #9400d3;
+  padding-left: 10px;
 }
 
 #banner a span:hover {
@@ -166,22 +165,40 @@ body {
 }
 
 .card {
-  border: 1px solid #8a6ca0;
-  padding: 30px;
+  background: rgba(228, 228, 228, 0.235);
+  border: none;
 }
 
-.card-title {
-  text-transform: uppercase;
-  font-family: 'Century Gothic', sans-serif;
-  font-weight: bold;
-  letter-spacing: 0.2em;
-  font-size: 1em;
+.card-body {
+  margin-top: 50px;
   text-align: center;
-  margin-top: 30px;
-  margin-bottom: 30px;
+}
+
+.card-categories {
+  text-transform: lowercase;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  font-size: 0.8em;
+  color: #fff;
+  position: relative;
+}
+
+.card-categories span {
+  position: relative;
+  top: 50px;
+  left: 70%;
+  background: #9400d3;
+  padding: 5px;
+  -webkit-box-shadow: 5px 10px #8a6ca0;
+          box-shadow: 5px 10px #8a6ca0;
 }
 
 .card-title a {
+  font-family: 'Oswald', sans-serif;
+  letter-spacing: 0.1;
+  text-align: center;
+  font-size: 1.2em;
+  font-weight: lighter;
   color: #000;
   text-decoration: none;
 }
@@ -201,23 +218,21 @@ body {
 }
 
 .card-text {
-  font-size: .9rem;
+  font-size: 1em;
+  padding-bottom: 30px;
 }
 
-.card-body {
-  text-align: center;
-}
-
-.card-body .btn {
+.card-btn a {
   color: black;
+  text-decoration: none;
   text-transform: uppercase;
-  font-family: 'Oswald', sans-serif;
-  font-size: .7em;
-  letter-spacing: 0.2em;
+  font-size: 0.8em;
+  letter-spacing: 0.1em;
 }
 
-.card-body .btn:hover {
-  color: #9400d3;
+.card-btn a:hover {
+  color: #8a6ca0;
+  font-weight: bold;
 }
 
 /* --------------------------------- Footer -----------------------------------*/
@@ -263,16 +278,13 @@ footer .social-icons a:hover {
 /* ------------------------------------- About --------------------------------*/
 #about {
   text-align: center;
-  padding: 100px 0 90px 0;
+  padding: 150px 0 150px 0;
   position: relative;
 }
 
-#about-img {
-  min-height: 30vh;
-  max-width: 50%;
+#about-img-down {
+  top: 100;
   position: relative;
-  -webkit-filter: sepia(60%);
-          filter: sepia(60%);
 }
 
 .about-title {
@@ -290,9 +302,41 @@ footer .social-icons a:hover {
 }
 
 .about-text {
-  font-size: 0.9em;
-  text-align: justify;
+  font-size: 1.1em;
+  text-align: center;
   padding-bottom: 30px;
+}
+
+.animo {
+  display: inline-block;
+  color: #474e51;
+  position: relative;
+  cursor: pointer;
+}
+
+.animo::after {
+  content: '';
+  position: absolute;
+  width: 80%;
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+  height: 3px;
+  bottom: -10;
+  left: 10;
+  background-color: #9400d3;
+  -webkit-transform-origin: bottom left;
+          transform-origin: bottom left;
+  -webkit-transition: -webkit-transform .3s ease-in-out;
+  transition: -webkit-transform .3s ease-in-out;
+  transition: transform .3s ease-in-out;
+  transition: transform .3s ease-in-out, -webkit-transform .3s ease-in-out;
+}
+
+.animo:hover::after {
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transform-origin: bottom right;
+          transform-origin: bottom right;
 }
 
 @media (max-width: 768px) {
@@ -307,6 +351,8 @@ footer .social-icons a:hover {
   padding-top: 200px;
   color: #ffffff;
   background: #9400d3;
+  -webkit-box-shadow: 15px 10px #8a6ca0;
+          box-shadow: 15px 10px #8a6ca0;
 }
 
 .jumbotron-fluid h1 {
