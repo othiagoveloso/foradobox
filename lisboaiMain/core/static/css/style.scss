@@ -1,4 +1,3 @@
-
 $colorPurple: #8a6ca0;
 $colorViolet: #9400d3; 
 
@@ -11,11 +10,20 @@ $colorViolet: #9400d3;
 }
 
 /* ------------------------------- Navbar -------------------------------*/
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: 0;
+}
+
 body{
 	width: 100%;
     height: auto;
     font-family: 'Century Gothic', sans-serif;
+    overflow-x: hidden;
 }
+
 
 .navbar {
 	transition: 0.5s all;
@@ -76,30 +84,28 @@ body{
     max-width: 80%;
     height: auto;
     margin: 0px auto;
-
     padding: 150px 0px 0px 0px;
     img{
         width: 100%;
         height: 60vh;
         max-height: 60vh;
         margin-bottom: 120px;
-        filter: grayscale(50);
         position: relative;
         opacity: 0.7;
     }
     a span{
         font-family: 'Oswald', sans-serif;
-        font-size: 1.8em;
+        font-size: 0.8em;
         text-transform: uppercase;
-        
+        text-align: inicial;
         color: #ffffff; 
-        text-align: center;
+        background: rgba(0, 0, 0, 0.7);
         max-width: 300px;
         position: absolute;
-        top: 25%;
-        left: 25%;
+        top: 35%;
+        left: 15;
         box-sizing: border-box;
-        background: $colorViolet;
+        padding-left: 10px;
             &:hover{
                 color: rgb(203, 202, 202);
             }
@@ -120,7 +126,7 @@ body{
         a span{
             width: 100%;
             top: 20%;
-            left:15%;
+            left:9%;
         }
     }
 }
@@ -145,23 +151,46 @@ body{
 }
 
 .card{
-    border: 0.5px solid $colorViolet;
-    padding: 30px;
+
+    background: rgba(228, 228, 228, 0.235);
+    border: none;
+
 }
 
-.card-title{
-    @include fontType(1.0em);
-	text-align: center;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    a{
+.card-body{
+    margin-top: 50px;
+    text-align: center;
+  }
+
+.card-categories{
+    text-transform: lowercase;
+	font-weight: bold;
+    letter-spacing: 0.1em;
+    font-size: 0.8em;
+    color: #fff;
+    position: relative;
+    span {
+        position:relative;
+        top: 50px;
+        left: 70%;
+        background: $colorViolet;
+        padding: 5px;
+        box-shadow: 5px 10px $colorPurple;
+    }
+}
+
+.card-title a{
+        font-family: 'Oswald', sans-serif;
+        letter-spacing: 0.1;
+        text-align: center;
+        font-size: 1.2em;
+        font-weight: lighter;
         color: #000;
         text-decoration: none;
         &:hover{
             color: #878787;
             text-decoration: none;
         }
-    }
 }
 
 .card-date{
@@ -172,33 +201,30 @@ body{
 	text-align: center;
 	padding-bottom: 30px;
 }
+
 .card-text{
-	font-size: .9rem;
+    font-size: 1em;
+    padding-bottom: 30px;
 }
 
-.card-body{
-    text-align: center;
-  }
-
-.card-body .btn{
-	color: black;
+.card-btn a{
+    color: black;
+    text-decoration: none;
 	text-transform: uppercase;
-	font-family: 'Oswald', sans-serif;
-	font-size: .7em;
-	letter-spacing: 0.2em;
+	font-size: 0.8em;
+    letter-spacing: 0.1em;
     &:hover{
-        color: $colorViolet;
+        color: $colorPurple;
+        font-weight: bold;
     }
 }
-
-
 
 /* --------------------------------- Footer -----------------------------------*/
 footer{
     @include fontType(0.8em);
     background: #FFFFFF;
     text-align: center;
-    padding-top: 50px;
+    margin-top: 50px;
 }
 
 footer .social-icons{
@@ -217,7 +243,7 @@ footer .social-icons{
 }
 
 #copyright {
-    color: #ca9efc;
+    color: #b0a2c1;
     margin-top: 30px;
     font-family: 'Oswald', sans-serif;
     text-align: center;
@@ -226,33 +252,54 @@ footer .social-icons{
 /* ------------------------------------- About --------------------------------*/
 #about{
 	text-align: center;
-    padding: 150px 0 90px 0;
+    padding: 150px 0 150px 0;
     position: relative;
 }
 
-#about-img{
-	background: cover;
-	padding: 0px 0 70px 20px;
-	min-height: 30vh;
-    text-align: center;
+#about-img-down{
+    top: 100;
     position: relative;
-    filter: sepia(60%);
-}
-
-.rounded-circle{
-	height: 13em;
 }
 
 .about-title{
 	@include fontType(0.9em);
-	padding: 40px 0;
+	margin: 50px 0 50px 0;
+}
+
+.about-name {
+    padding-bottom: 30px;
+    letter-spacing: 0.1em;
 }
 
 .about-text{
-	font-family: 'Oswald', sans-serif;
-	font-size: 0.9em;
-    text-align: justify;
+	font-size: 1.1em;
+    text-align: center;
+    padding-bottom: 30px;
 }
+
+.animo {
+    display:inline-block;
+    color:#474e51;
+    position:relative;
+    cursor:pointer
+}
+.animo::after{
+    content:'';
+    position:absolute;
+    width:80%;
+    transform:scaleX(1);
+    height:3px;
+    bottom:-10;
+    left:10;
+    background-color:$colorViolet;
+    transform-origin:bottom left;
+    transition:transform .3s ease-in-out
+}
+.animo:hover::after{
+    transform:scaleX(0);
+    transform-origin:bottom right
+}
+    
 
 @media (max-width: 768px){
     #about .col-md-6{
@@ -266,6 +313,7 @@ footer .social-icons{
 	padding-top: 200px;
     color: #ffffff;
     background: #9400d3;
+    box-shadow: 15px 10px $colorPurple;
     h1{
     font-family: 'Oswald', sans-serif;
     font-size: 2.1em;
@@ -297,7 +345,7 @@ footer .social-icons{
 	color: #424242;
 }
     
-/* ------------------------------------- Portugal --------------------------------*/
+/* ------------------------------------- Article --------------------------------*/
 .article{
     @include fontType(0.9em);
     padding: 200px 0 100px 0;
@@ -307,37 +355,25 @@ footer .social-icons{
 
 /* ------------------------------------- Contato --------------------------------*/
 
-.contact-form{
+.contact{
     @include fontType(0.7em);
     margin: 0 auto;
     max-width: 50%;
     height: auto;
-    padding: 240px 0 0 0;
-    box-sizing: border-box;
+    margin-top: 240px;
+    margin-bottom: 100px;
+    padding: 40px;
     text-align: center;
-    p em{
+    p{
         letter-spacing: 0.1em;
+        margin-bottom: 30px;
     }
-    button{
-        @include fontType(1.2em);
-        width: 100%;
-        background: #FFFFFF;
-        text-align: center;
-        margin-bottom: 80px;
-        &:hover{
-            background: $colorViolet;
+    a{
+        color: $colorViolet;
+        &:hover {
+            color: $colorPurple;
+            text-decoration: none;
         }
     }
-}
-
-.txtb input, .txtb textarea{
-	width: 100%;
-	border: none;
-	outline: none;
-	font-size: 1.3em;
-	margin-top:20px;
-	padding: 5px;
-	margin: 10px 0;
-	background: $colorPurple;
 }
 

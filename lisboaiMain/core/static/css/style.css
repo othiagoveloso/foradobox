@@ -1,8 +1,17 @@
 /* ------------------------------- Navbar -------------------------------*/
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  -webkit-box-sizing: 0;
+          box-sizing: 0;
+}
+
 body {
   width: 100%;
   height: auto;
   font-family: 'Century Gothic', sans-serif;
+  overflow-x: hidden;
 }
 
 .navbar {
@@ -86,25 +95,24 @@ body {
   height: 60vh;
   max-height: 60vh;
   margin-bottom: 120px;
-  -webkit-filter: grayscale(50);
-          filter: grayscale(50);
   position: relative;
   opacity: 0.7;
 }
 
 #banner a span {
   font-family: 'Oswald', sans-serif;
-  font-size: 1.8em;
+  font-size: 0.8em;
   text-transform: uppercase;
+  text-align: inicial;
   color: #ffffff;
-  text-align: center;
+  background: rgba(0, 0, 0, 0.7);
   max-width: 300px;
   position: absolute;
-  top: 25%;
-  left: 25%;
+  top: 35%;
+  left: 15;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  background: #9400d3;
+  padding-left: 10px;
 }
 
 #banner a span:hover {
@@ -125,7 +133,7 @@ body {
   #banner a span {
     width: 100%;
     top: 20%;
-    left: 15%;
+    left: 9%;
   }
 }
 
@@ -157,22 +165,43 @@ body {
 }
 
 .card {
-  border: 0.5px solid #9400d3;
-  padding: 30px;
+
+
+  background: rgba(228, 228, 228, 0.235);
+  border: none;
+
 }
 
-.card-title {
-  text-transform: uppercase;
-  font-family: 'Century Gothic', sans-serif;
-  font-weight: bold;
-  letter-spacing: 0.2em;
-  font-size: 1em;
+.card-body {
+  margin-top: 50px;
   text-align: center;
-  margin-top: 30px;
-  margin-bottom: 30px;
+}
+
+.card-categories {
+  text-transform: lowercase;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  font-size: 0.8em;
+  color: #fff;
+  position: relative;
+}
+
+.card-categories span {
+  position: relative;
+  top: 50px;
+  left: 70%;
+  background: #9400d3;
+  padding: 5px;
+  -webkit-box-shadow: 5px 10px #8a6ca0;
+          box-shadow: 5px 10px #8a6ca0;
 }
 
 .card-title a {
+  font-family: 'Oswald', sans-serif;
+  letter-spacing: 0.1;
+  text-align: center;
+  font-size: 1.2em;
+  font-weight: lighter;
   color: #000;
   text-decoration: none;
 }
@@ -192,23 +221,21 @@ body {
 }
 
 .card-text {
-  font-size: .9rem;
+  font-size: 1em;
+  padding-bottom: 30px;
 }
 
-.card-body {
-  text-align: center;
-}
-
-.card-body .btn {
+.card-btn a {
   color: black;
+  text-decoration: none;
   text-transform: uppercase;
-  font-family: 'Oswald', sans-serif;
-  font-size: .7em;
-  letter-spacing: 0.2em;
+  font-size: 0.8em;
+  letter-spacing: 0.1em;
 }
 
-.card-body .btn:hover {
-  color: #9400d3;
+.card-btn a:hover {
+  color: #8a6ca0;
+  font-weight: bold;
 }
 
 /* --------------------------------- Footer -----------------------------------*/
@@ -220,7 +247,7 @@ footer {
   font-size: 0.8em;
   background: #FFFFFF;
   text-align: center;
-  padding-top: 50px;
+  margin-top: 50px;
 }
 
 footer .social-icons {
@@ -245,7 +272,7 @@ footer .social-icons a:hover {
 }
 
 #copyright {
-  color: #ca9efc;
+  color: #b0a2c1;
   margin-top: 30px;
   font-family: 'Oswald', sans-serif;
   text-align: center;
@@ -254,22 +281,13 @@ footer .social-icons a:hover {
 /* ------------------------------------- About --------------------------------*/
 #about {
   text-align: center;
-  padding: 150px 0 90px 0;
+  padding: 150px 0 150px 0;
   position: relative;
 }
 
-#about-img {
-  background: cover;
-  padding: 0px 0 70px 20px;
-  min-height: 30vh;
-  text-align: center;
+#about-img-down {
+  top: 100;
   position: relative;
-  -webkit-filter: sepia(60%);
-          filter: sepia(60%);
-}
-
-.rounded-circle {
-  height: 13em;
 }
 
 .about-title {
@@ -278,13 +296,50 @@ footer .social-icons a:hover {
   font-weight: bold;
   letter-spacing: 0.2em;
   font-size: 0.9em;
-  padding: 40px 0;
+  margin: 50px 0 50px 0;
+}
+
+.about-name {
+  padding-bottom: 30px;
+  letter-spacing: 0.1em;
 }
 
 .about-text {
-  font-family: 'Oswald', sans-serif;
-  font-size: 0.9em;
-  text-align: justify;
+  font-size: 1.1em;
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.animo {
+  display: inline-block;
+  color: #474e51;
+  position: relative;
+  cursor: pointer;
+}
+
+.animo::after {
+  content: '';
+  position: absolute;
+  width: 80%;
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+  height: 3px;
+  bottom: -10;
+  left: 10;
+  background-color: #9400d3;
+  -webkit-transform-origin: bottom left;
+          transform-origin: bottom left;
+  -webkit-transition: -webkit-transform .3s ease-in-out;
+  transition: -webkit-transform .3s ease-in-out;
+  transition: transform .3s ease-in-out;
+  transition: transform .3s ease-in-out, -webkit-transform .3s ease-in-out;
+}
+
+.animo:hover::after {
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transform-origin: bottom right;
+          transform-origin: bottom right;
 }
 
 @media (max-width: 768px) {
@@ -299,6 +354,8 @@ footer .social-icons a:hover {
   padding-top: 200px;
   color: #ffffff;
   background: #9400d3;
+  -webkit-box-shadow: 15px 10px #8a6ca0;
+          box-shadow: 15px 10px #8a6ca0;
 }
 
 .jumbotron-fluid h1 {
@@ -337,7 +394,7 @@ footer .social-icons a:hover {
   color: #424242;
 }
 
-/* ------------------------------------- Portugal --------------------------------*/
+/* ------------------------------------- Article --------------------------------*/
 .article {
   text-transform: uppercase;
   font-family: 'Century Gothic', sans-serif;
@@ -350,7 +407,7 @@ footer .social-icons a:hover {
 }
 
 /* ------------------------------------- Contato --------------------------------*/
-.contact-form {
+.contact {
   text-transform: uppercase;
   font-family: 'Century Gothic', sans-serif;
   font-weight: bold;
@@ -359,40 +416,23 @@ footer .social-icons a:hover {
   margin: 0 auto;
   max-width: 50%;
   height: auto;
-  padding: 240px 0 0 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  margin-top: 240px;
+  margin-bottom: 100px;
+  padding: 40px;
   text-align: center;
 }
 
-.contact-form p em {
+.contact p {
   letter-spacing: 0.1em;
+  margin-bottom: 30px;
 }
 
-.contact-form button {
-  text-transform: uppercase;
-  font-family: 'Century Gothic', sans-serif;
-  font-weight: bold;
-  letter-spacing: 0.2em;
-  font-size: 1.2em;
-  width: 100%;
-  background: #FFFFFF;
-  text-align: center;
-  margin-bottom: 80px;
+.contact a {
+  color: #9400d3;
 }
 
-.contact-form button:hover {
-  background: #9400d3;
+.contact a:hover {
+  color: #8a6ca0;
+  text-decoration: none;
 }
-
-.txtb input, .txtb textarea {
-  width: 100%;
-  border: none;
-  outline: none;
-  font-size: 1.3em;
-  margin-top: 20px;
-  padding: 5px;
-  margin: 10px 0;
-  background: #8a6ca0;
-}
-/*# sourceMappingURL=lisboai.css.map */
+/*# sourceMappingURL=style.css.map */
