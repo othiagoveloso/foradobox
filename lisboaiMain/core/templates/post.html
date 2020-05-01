@@ -1,21 +1,27 @@
 {% extends 'base.html' %}
 {% load static %}
 
-
 {% block content %}
 
 <!-- Post -->
 
+
 {% for post in post %}
+<!--<script src="{% static 'js/setMeta.js' %}"></script> -->
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
     <a href="{% url 'pageArticle' post.categories.id %}"><h6 class="category-name"> #{{post.categories}}</h6> </a>
     <h1 class="display-4">{{post.title}}</h1>
     <hr/>
     <h5>{{post.short_description}}</h5>
-  
+    
+     <script>
+    
+     </script>
   </div>
 </div>
+
+
 
 <div class="container">
   <div class="row">
@@ -27,6 +33,9 @@
           <strong> Em: </strong>  {{post.updated|date:'d-m-Y'}}
           
         </p>
+
+        <div class="fb-share-button" data-href="http://localhost:8000/article/teste-bloco-esqueda" data-layout="button" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
+       
         
       </div>
 
@@ -43,6 +52,30 @@
     </div><!-- col -->
   </div><!-- row -->
 </div><!-- container -->
+
+<script>
+
+  var key = []
+  var currentUrl = document.URL;
+  var key = ['url','type','title','description','image']
+  var values = [currentUrl,'Website','{{post.title}}','{{post.short_description}}','{{post.image}}']
+  
+   
+  for(var i=0;i < key.length; i++){
+
+    var link = document.createElement('meta');
+    link.setAttribute('property', 'og:'+ key[i]);
+    link.content = values[i];
+    document.getElementsByTagName('head')[0].appendChild(link);
+
+console.log(link)
+
+}
+
+
+
+</script>
+
 {% endfor %}
 
 {% endblock %}
