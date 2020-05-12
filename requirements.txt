@@ -9,11 +9,14 @@ django-heroku==0.3.1
 django-summernote==0.8.11.4
 djangorestframework==3.10.0
 gunicorn==19.9.0
+heroku==0.1.4
 idna==2.8
 psycopg2==2.7.6.1
+python-dateutil==1.5
 pytz==2018.9
 requests==2.21.0
 static3==0.7.0
+Unidecode==1.1.1
 Unipath==1.1
 urllib3==1.24.2
 whitenoise==4.1.2
