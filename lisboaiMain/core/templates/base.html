@@ -8,9 +8,6 @@
     <title> FORA DO BOX | Imigração, trabalho e vida em Portugal</title>
     <!-- Bootstrap core CSS -->
 	  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-	  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500&display=swap');
-    </style>
     <link rel="shortcut icon" href="static/img/favicon.ico" />
 	  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 	  <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -36,14 +33,18 @@
               {% for category in category %}
               
               <li class="nav-item">
-                <a class="nav-link" href="{% url 'pageArticle' category.id %}">#{{category.name}}</a></i>
+                <a class="nav-link" href="{% url 'pageArticle' category.nameUrl %}">#{{category.name}}</a></i>
               </li>
               {% endfor %}
               <li class="nav-item">
-                <a class="nav-link" href="{% url 'aboutUs' %}">Sobre</a>
+                <a class="nav-link" href="{% url 'aboutUs' %}"> <svg class="bi bi-box-arrow-in-up-right" width="1.5em" height="1.5em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" d="M14.5 3A1.5 1.5 0 0013 1.5H3A1.5 1.5 0 001.5 3v5a.5.5 0 001 0V3a.5.5 0 01.5-.5h10a.5.5 0 01.5.5v10a.5.5 0 01-.5.5H9a.5.5 0 000 1h4a1.5 1.5 0 001.5-1.5V3z" clip-rule="evenodd"/>
+                  <path fill-rule="evenodd" d="M4.5 6a.5.5 0 01.5-.5h5a.5.5 0 01.5.5v5a.5.5 0 01-1 0V6.5H5a.5.5 0 01-.5-.5z" clip-rule="evenodd"/>
+                  <path fill-rule="evenodd" d="M10.354 5.646a.5.5 0 010 .708l-8 8a.5.5 0 01-.708-.708l8-8a.5.5 0 01.708 0z" clip-rule="evenodd"/>
+                </svg> Sobre</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{% url 'contact' %}">Contato</a>
+                <a class="nav-link" href="{% url 'contact' %}"> <i class="far fa-envelope" size="5px"></i>  Contato</a>
               </li>
 
             </ul>           

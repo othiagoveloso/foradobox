@@ -32,7 +32,7 @@ urlpatterns = [
     path('admin/lisboai', admin.site.urls),
     path('summernote/', include('django_summernote.urls')),  
     path('', views.index, name='index'),
-    path('categoria/<int:id>', views.pageArticle, name='pageArticle'),
+    path('categoria/<str:nameUrl>', views.pageArticle, name='pageArticle'),
     path('article/<str:slug>', views.post, name='post'),
     path('about/', views.aboutUs, name='aboutUs'),
     path('contact/', views.contact, name='contact'),

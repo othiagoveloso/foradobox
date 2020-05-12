@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-
+from unidecode import unidecode
 
 # retorno para status 
 STATUS_CHOICES = (
@@ -10,8 +10,12 @@ STATUS_CHOICES = (
 
 class Categories(models.Model):
 
-    name = models.CharField(max_length=100)
+    name =    models.CharField(max_length=100)
+    nameUrl = models.CharField(max_length=100)
 
+    def save(self, *args, **kwargs):
+        self.nameUrl = unidecode(self.name).lower()
+        return super(Categories, self).save(*args, **kwargs)   
 
     def __unicode__(self): 
         return (self.name)
@@ -22,29 +26,22 @@ class Categories(models.Model):
 
 class Article(models.Model):
 
-    categories = models.ForeignKey('Categories',on_delete=False)
-    slug = models.SlugField(unique=True)
-    title = models.CharField(max_length=100)
+    categories =        models.ForeignKey('Categories',on_delete=models.CASCADE)
+    slug =              models.SlugField(unique=True)
+    title =             models.CharField(max_length=100)
     short_description = models.CharField(max_length=100)
-    body = models.TextField(blank=True)
-    image = models.URLField(max_length=200)
-    created_by = models.ForeignKey(User, on_delete=models.CASCADE)
-    updated = models.DateTimeField(auto_now=True)
-    state = models.CharField(max_length=1, choices=STATUS_CHOICES)
-    spotlight = models.BooleanField(default=False)
-
+    body =              models.TextField(blank=True)
+    image =             models.URLField(max_length=200)
+    created_by =        models.ForeignKey(User, on_delete=models.CASCADE)
+    updated =           models.DateTimeField(auto_now=True)
+    state =             models.CharField(max_length=1,default='d', choices=STATUS_CHOICES)
+    spotlight =         models.BooleanField(default=False)
 
     def __str__(self):
         return self.title 
 
-    def body_preview(self):
-        return self.body[:50]    
-
     def __unicode__(self): 
         return (self.title)    
-
-             
-
 
 class Social(models.Model):
 
@@ -54,3 +51,10 @@ class Social(models.Model):
 
     def __unicode__(self): 
         return (self.name)
+
+
+class Post(models.Model):
+
+    name =    models.CharField(max_length=100)
+    email =   models.EmailField(max_length = 254) 
+    message = models.TextField()

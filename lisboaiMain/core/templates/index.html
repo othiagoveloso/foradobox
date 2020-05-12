@@ -9,7 +9,7 @@
 	{% for article in articles %}
     {% if article.spotlight %}	
 		<div class="col-md-6">
-			<img src="{{article.image}}" alt="">
+			<img src="{{article.image}}" class="img-fluid" alt="">
 			<h1><a href="{% url 'post' article.slug %}"><span>| {{article.title}}</span></a></h1>
 		</div>
 		
@@ -20,19 +20,18 @@
 
 
 <!-- Cards -->
- {% for article in articles %}
- {% if article.spotlight == False %}	
+	
 <div class="container">
-	<div class="row">	
-
+	<div class="row">		
     	<div class="card-deck">
-
+			{% for article in articles %}
+			{% if article.spotlight == False %}
 			<div class="col-md-12">
 	        	<div class="card mb-3" style="max-width: auto;">
 			  		<div class="row no-gutters">
 						<div class="col-md-4">
-							<p class="card-categories"><span> {{article.categories}} </span></p>
-					    	<a href="{% url 'post' article.slug %}"><img src="{{article.image}}" class="card-img" alt="..."></a>
+							<h6 class="card-categories"><span> {{article.categories}} </span></h6>
+					    	<a href="{% url 'post' article.slug %}"><img src="{{article.image}}" class=" card-img" alt="..."></a>
 						</div>
 							
 					    <div class="col-md-8">
@@ -47,11 +46,11 @@
 					</div>
 				</div>
 			</div> 
-
+			{% endif %}	
+			{% endfor %}
 		</div><!-- card-deck -->
 	</div> <!-- row -->
 </div> 
-{% endif %}	
-{% endfor %}	
+	
 {% endblock %}
       
