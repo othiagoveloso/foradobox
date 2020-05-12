@@ -51,7 +51,7 @@ class Skill(models.Model):
 class Experience(models.Model):
     
     user =              models.ForeignKey('Profile',related_name='experiences', on_delete=models.CASCADE)
-    type_experience =   models.CharField(max_length=1, choices=TYPE_EXPERIENCE)
+    type_experience =   models.CharField(max_length=1,default='c', choices=TYPE_EXPERIENCE)
     title =             models.CharField(max_length=100)
     company =           models.CharField(max_length=50)
     short_description = models.CharField(max_length=100)
@@ -95,7 +95,7 @@ class Education(models.Model):
     short_description = models.CharField(max_length=100)
     icon =              models.CharField(max_length=100)
     link =              models.URLField(max_length=200, blank=True)
-    type_education =    models.CharField(max_length=1, choices=TYPE_EDUCATION)
+    type_education =    models.CharField(max_length=1, default='t', choices=TYPE_EDUCATION)
     position =          models.PositiveSmallIntegerField ("Position", blank=True,null=True)
 
     def __unicode__(self): 
