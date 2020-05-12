@@ -24,11 +24,13 @@ class Profile(models.Model):
     image =             models.URLField(max_length=200)
     updated =           models.DateTimeField(auto_now=True)
 
-    def __str__(self):
-        return self.name
     
     def __unicode__(self):
         return (self.name)
+    
+    def __str__(self):
+        return self.name
+
 
 
 class Skill(models.Model):
@@ -37,11 +39,12 @@ class Skill(models.Model):
     icon =     models.CharField(max_length=100)
     position = models.PositiveSmallIntegerField ("Position", blank=True,null=True)
 
-    def __str__(self):
-        return self.name
-
+    
     def __unicode__(self): 
         return (self.name)
+    
+    def __str__(self):
+        return self.name
 
     class Meta:
         ordering = ['position'] 
@@ -50,7 +53,7 @@ class Skill(models.Model):
 
 class Experience(models.Model):
     
-    user =              models.ForeignKey('Profile',related_name='user', on_delete=models.CASCADE)
+    user =              models.ForeignKey('Profile',related_name='experience', on_delete=models.CASCADE)
     type_experience =   models.CharField(max_length=1,default='c', choices=TYPE_EXPERIENCE)
     title =             models.CharField(max_length=100)
     company =           models.CharField(max_length=50)
@@ -61,6 +64,10 @@ class Experience(models.Model):
     skills =            models.ManyToManyField(Skill)
     position =          models.PositiveSmallIntegerField ("Position", blank=True,null=True)
 
+    
+    def __unicode__(self):
+        return (self.title) 
+    
     def __str__(self):
         return self.title
     
@@ -68,13 +75,12 @@ class Experience(models.Model):
         ordering = ['position']
     
 
-    def __unicode__(self):
-        return (self.title)    
+       
 
 
 class Social(models.Model):
     
-    user = models.ForeignKey('Profile',related_name='user', on_delete=models.CASCADE)
+    user = models.ForeignKey('Profile',related_name='social', on_delete=models.CASCADE)
     name = models.CharField(max_length=100)
     link = models.URLField(max_length=200, blank=True)
     icon = models.CharField(max_length=100)
@@ -90,7 +96,7 @@ class Social(models.Model):
 
 class Education(models.Model):
 
-    user =              models.ForeignKey('Profile',related_name='user', on_delete=models.CASCADE)
+    user =              models.ForeignKey('Profile',related_name='education', on_delete=models.CASCADE)
     name =              models.CharField(max_length=100)
     short_description = models.CharField(max_length=100)
     icon =              models.CharField(max_length=100)
