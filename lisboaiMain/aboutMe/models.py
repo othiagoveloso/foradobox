@@ -53,7 +53,7 @@ class Skill(models.Model):
 
 class Experience(models.Model):
     
-    user =              models.ForeignKey('Profile',related_name='experience', on_delete=models.CASCADE)
+    user =              models.ForeignKey('Profile',related_name='experiences', on_delete=models.CASCADE)
     type_experience =   models.CharField(max_length=1,default='c', choices=TYPE_EXPERIENCE)
     title =             models.CharField(max_length=100)
     company =           models.CharField(max_length=50)
@@ -80,7 +80,7 @@ class Experience(models.Model):
 
 class Social(models.Model):
     
-    user = models.ForeignKey('Profile',related_name='social', on_delete=models.CASCADE)
+    user = models.ForeignKey('Profile',related_name='socials', on_delete=models.CASCADE)
     name = models.CharField(max_length=100)
     link = models.URLField(max_length=200, blank=True)
     icon = models.CharField(max_length=100)
@@ -96,7 +96,7 @@ class Social(models.Model):
 
 class Education(models.Model):
 
-    user =              models.ForeignKey('Profile',related_name='education', on_delete=models.CASCADE)
+    user =              models.ForeignKey('Profile',related_name='educations', on_delete=models.CASCADE)
     name =              models.CharField(max_length=100)
     short_description = models.CharField(max_length=100)
     icon =              models.CharField(max_length=100)

@@ -1,4 +1,4 @@
-from django.contrib import admin
+from django.contrib import messages, admin
 from lisboaiMain.core.models import Categories,Article,Social, Post
 from django_summernote.admin import SummernoteModelAdmin
 from django.utils.html import format_html
@@ -64,6 +64,13 @@ class ArticleAdmin(SummernoteModelAdmin):
     list_editable = (
         'spotlight',
         )
+
+    def save(self, *args, **kwargs):
+        vote_count = Article.objects.filter(spotlight=True).count()
+        messages.warning('Você ja tem 2 destaques cadastrados')
+        
+        super(Article, self).save(*args, **kwargs) 
+    
 admin.site.register(Article, ArticleAdmin)
 
 

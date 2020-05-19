@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'lisboaiMain.core',
     'lisboaiMain.aboutMe',
     'corsheaders',
+    'rest_framework',
 
 
 ]

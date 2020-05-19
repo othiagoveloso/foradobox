@@ -1,6 +1,10 @@
 from django.db import models
 from django.contrib.auth.models import User
 from unidecode import unidecode
+from django.contrib import messages
+import requests
+
+
 
 # retorno para status 
 STATUS_CHOICES = (
@@ -41,7 +45,10 @@ class Article(models.Model):
         return self.title 
 
     def __unicode__(self): 
-        return (self.title)    
+        return (self.title) 
+
+
+                
 
 class Social(models.Model):
 
