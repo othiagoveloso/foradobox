@@ -17,14 +17,14 @@ def index(request,template_name="index.html"):
 
 
 def post(request,slug):
-    objPost = Article.objects.filter(slug=slug)
+    objPost = Article.objects.filter(slug=slug, state='p')
 
     return render(request,"post.html",{"post":objPost})
 
 
 
 def pageArticle(request,nameUrl):
-    objArticle = Article.objects.all().filter(categories__nameUrl=nameUrl)
+    objArticle = Article.objects.all().filter(categories__nameUrl=nameUrl, state='p').order_by('-updated')
    
     return render(request,"artigos.html",{"articles":objArticle})
 
