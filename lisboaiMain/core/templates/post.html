@@ -5,7 +5,6 @@
 
 <!-- Post -->
 
-
 {% for post in post %}
 
 <div class="jumbotron jumbotron-fluid">
@@ -13,11 +12,7 @@
     <a href="{% url 'pageArticle' post.categories.nameUrl %}"><h6 class="category-name"> #{{post.categories}}</h6> </a>
     <h1 class="display-4">{{post.title}}</h1>
     <hr/>
-    <h5>{{post.short_description}}</h5>
-    
-     <script>
-    
-     </script>
+    <h5>{{post.short_description}}</h5>   
   </div>
 </div>
 
@@ -25,25 +20,16 @@
 <div class="container">
   <div class="row">
     <div class="col-md-9">
-
       <div class="post-autor">
-        <p>  <strong> Por: </strong>  {{post.created_by.first_name}} |
-          
-          <strong> Em: </strong>  {{post.updated|date:'d-m-Y'}}
-          
-        </p>
-
-
-        
+        <p>  <strong> Por: </strong>  {{post.created_by.first_name}} |          
+          <strong> Em: </strong>  {{post.updated|date:'d-m-Y'}}          
+        </p> 
       </div>
-
       <div class="post-text">
       {% autoescape off %}
         {{post.body}}
       {% endautoescape %}
-
       </div>
-
     </div><!-- col -->
   </div><!-- row -->
 </div><!-- container -->
@@ -52,9 +38,9 @@
 
     var key = []
     var currentUrl = document.URL;
-    var key = ['url','type','title','description','image']
-    var values = [currentUrl,'article','{{post.title}}','{{post.short_description}}','{{post.image}}']
-      
+    var key = ['title','description','type', 'url', 'site_name', 'image']
+    var values = ['{{post.title}}', '{{post.short_description}}', 'article', currentUrl, 'Fora do box', '{{post.image}}']
+
     for(var i=0;i < key.length; i++){
 
       var link = document.createElement('meta');
@@ -62,12 +48,6 @@
       link.content = values[i];
       document.getElementsByTagName('head')[0].appendChild(link);
   }
-
-    var urlEnconded = encodeURIComponent(currentUrl);
-    var frameFacebook = document.getElementById('buttonFc');
-      frameFacebook.src = "https://www.facebook.com/plugins/share_button.php?href="+ urlEnconded + "&layout=button&size=large&width=77&height=28&appId";
-        
-    var test = document.getElementById('button-fb');
       
 </script>
 
