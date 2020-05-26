@@ -51,6 +51,26 @@ class Skill(models.Model):
 
 
 
+class Certifications(models.Model):
+
+    user =              models.ForeignKey('Profile',related_name='certifications', on_delete=models.CASCADE)
+    name =     models.CharField(max_length=100)
+    icon =     models.CharField(max_length=100)
+    position = models.PositiveSmallIntegerField ("Position", blank=True,null=True)
+
+    
+    def __unicode__(self): 
+        return (self.name)
+    
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        ordering = ['position'] 
+
+
+
+
 class Experience(models.Model):
     
     user =              models.ForeignKey('Profile',related_name='experiences', on_delete=models.CASCADE)
