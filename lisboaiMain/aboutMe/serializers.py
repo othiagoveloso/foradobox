@@ -19,7 +19,7 @@ class ExperienceSerializer(serializers.ModelSerializer):
 class EducationSerializer(serializers.ModelSerializer):
     class Meta:
         model = Education
-        fields = ('short_description', 'icon', 'link', 'type_education', 'position')
+        fields = ('name','short_description', 'icon', 'link', 'type_education', 'position')
 
 
 class SocialSerializer(serializers.ModelSerializer):
