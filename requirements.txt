@@ -7,7 +7,7 @@ django-cors-headers==3.0.2
 django-decouple==2.1
 django-heroku==0.3.1
 django-summernote==0.8.11.4
-djangorestframework==3.10.0
+djangorestframework==3.11.2
 gunicorn==19.9.0
 heroku==0.1.4
 idna==2.8
